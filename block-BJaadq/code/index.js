@@ -44,7 +44,7 @@ function surnameWithS() {
     // your code goes here
     let allPeople = everyone();
     return allPeople.filter((name) =>
-        name.split(" ")[1].toLowerCase().includes("s")
+        name.split(" ")[1].toLowerCase().startsWith("s")
     );
 }
 
@@ -52,7 +52,7 @@ function surnameWithA() {
     // your code goes here
     let allPeople = everyone();
     return allPeople.filter((name) =>
-        name.split(" ")[1].toLowerCase().includes("a")
+        name.split(" ")[1].toLowerCase().startsWith("a")
     );
 }
 
