@@ -14,11 +14,14 @@ Clone the array before using sort method: [...arr]
 
 // - Find the index of `101` in numbers
 console.log(numbers.indexOf(101));
+// 8
 
 // - Find the last index of `9` in numbers
 console.log(numbers.lastIndexOf(9));
+// 11
 // - Convert value of strings array into a sentance like "This is a collection of words"
-console.log(string.join(' '));
+console.log(strings.join(' '));
+// This is a collection of words
 
 // - Add two new words in the strings array "called" and "sentance"
 var newstring = [...strings];
@@ -26,14 +29,17 @@ var newstring = [...strings];
 newstring.push("called", "sentance");
 // - Again convert the updated array (strings) into sentance like "This is a collection of words called sentance"
 console.log(newstring.join(" "));
+// This is a collection of words called sentance
 // - Remove the first word in the array (strings)
 let removestring = [...strings];
 removestring.unshift();
+// (6) ['This', 'is', 'a', 'collection', 'of', 'words']
 // - Find all the words that contain 'is' use string method 'includes'
 function is(string) {
     if (string.includes("is")) return string;
 }
 let isPresent = strings.filter(is);
+// (2) ['This', 'is']
 // - Find all the words that contain 'is' use string method 'indexOf'
 function is(string) {
     if (string.indexOf("is") != -1) return string;
@@ -43,19 +49,18 @@ function isNumberDivisibleByThree(number) {
     if (number % 3 == 0) return number;
 }
 let isDivisibleByThree = numbers.every(isNumberDivisibleByThree);
+// false
 
 // -  Sort Array from smallest to largest
-function sortArray(number) {
-    return number.sort((a, b) => a - b);
-}
-let sortedArray = numbers.sort(sortArray);
+numbers.sort(function (a, b) { return a - b });
+// (12)[1, 3, 4, 5, 6, 7, 9, 9, 11, 12, 18, 101]
 // - Remove the last word in strings
 
-function removeLastWord(string) {
+function removeLastWords(string) {
     return string.pop();
 }
 let removeLastWord = strings.pop();
-
+// 'words'
 // - Find largest number in numbers
 function findMaxNumber(number) {
     return Math.max(...number);
@@ -68,25 +73,33 @@ function findMaxString(string) {
 }
 let maxString = strings.reduce(findMaxString);
 // - Find all the even numbers
-function evenNumber(number) {
+function evenNumbers(number) {
     if (number % 2 == 0) return number;
 }
-let evenNumber = numbers.filter(evenNumber);
+let evenNumber = numbers.filter(evenNumbers);
+// (4) [4, 6, 12, 18]
 // - Find all the odd numbers
 function oddNumber(number) {
     if (number % 2 != 0) return number;
 }
 let oddNumber = numbers.filter(oddNumber);
+// (8) [1, 3, 5, 7, 9, 9, 11, 101]
 // - Place a new word at the start of the array use (unshift)
 let newWord = [...strings];
 newWord.unshift("Hello");
+// (6) ['Hello', 'This', 'is', 'a', 'collection', 'of']
 // - Make a subset of numbers array [18,9,7,11]
 numbers.slice(3, 7);
+// 
+// (4) [5, 6, 7, 9]
 // - Make a subset of strings array ['a','collection']
 strings.slice(2, 4);
+// (2) ['a', 'collection']
 // - Replace 12 & 18 with 1221 and 1881
 [...numbers].splice(numbers.indexOf(12), 1, 1221);
+// [12]
 [...numbers].splice(numbers.indexOf(18), 1, 1881);
+// [18]
 // - Replace words in strings array with the length of the word
 let stringLength = strings.map((string) => string.length);
 // - Find the sum of the length of words using above question
@@ -94,6 +107,7 @@ stringLength.reduce((acc, cv) => {
     acc = acc + cv;
     return acc;
 }, 0);
+// 19
 // - Customers Array
 var customers = [
     { firstname: 'Joe', lastname: 'Blogs' },
@@ -108,15 +122,16 @@ let customersName = customers.filter((customer) =>
 
 // - Create new array with only first name
 let customersFirstName = customers.map((customer) => customer.firstname);
+// (4) ['Joe', 'John', 'Dave', 'Jack']
 
 // - Create new array with all the full names (ex: "Joe Blogs")
 let customersFullName = customers.map(
     (customer) => `${customer.firstname} ${customer.lastname}`
 );
-
+//  ['Joe Blogs', 'John Smith', 'Dave Jones', 'Jack White']
 // - Sort the array created above alphabetically
 customersFullName.sort();
-
+// (4) ['Dave Jones', 'Jack White', 'Joe Blogs', 'John Smith']
 // - Create a new array that contains only user who has at least one vowel in the firstname.
 let customersVowel = customers.filter((customer) => {
     if (
