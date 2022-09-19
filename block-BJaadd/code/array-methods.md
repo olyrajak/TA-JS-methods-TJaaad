@@ -132,7 +132,8 @@ return element > 20;
 });
 
 console.log(found);
-28 --> 13. `unshift`
+28 --> 
+13. `unshift`
 
 <!-- var array1 = [1, 2, 3];
 
@@ -181,44 +182,53 @@ console.log(element);
 
 <!-- var numbers = [2, 4, 9, 20,8,10];
 
-const map1 = numbers.map(x => x \* 4);
+const map1 = numbers.map((x) => { return x * 4});
 
 console.log(map1);
 // expected output: Array [8, 32, 36, 80,32,40] -->
 
 19. `pop`
 
-<!-- var vegetables = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
+<!-- var vegetables = ['cabbage','broccoli', 'cauliflower',  'kale', 'tomato'];
 
-console.log(plants.pop());
-// expected output: "cabbage"
+console.log(vegetables.pop());
+// expected output: "tomato"
 
-console.log(plants);
-// expected output: Array ["broccoli", "cauliflower", "kale","tomato"] -->
+console.log(vegetables);
+// expected output: Array ["cabbage","broccoli", "cauliflower", "kale"] -->
 
 20. `reduce`
 
 <!-- const array1 = [1, 2, 3, 4];
-const reducer = (acc, currentValue) => acc + currentValue;
+const reducer = array1.reduce((acc, currentValue) => {return acc + currentValue},0);
 
 // 1 + 2 + 3 + 4
-console.log(array1.reduce(reducer));
+console.log(reducer);
 // expected output: 10 -->
 
 21. `slice`
 <!-- var months = ['Jan', 'March', 'April', 'June','July'];
 
-console.log(animals.months(1));
-// expected output: Array ["April", "June", "July"] -->
+console.log(months.slice(1,3));
+// expected output: Array ['March', 'April'] -->
 
 22. `some`
 
 <!-- var numbers = [1, 2, 3, 4, 5];
 
 var odd = function(element) {
-// checks whether an element is even
+// checks whether an element is Odd
 return element % 2 != 0;
 };
 
 console.log(numbers.some(odd));
+// expected output: true -->
+<!-- var numbers2 = [1, 2,9,3, 4, 5];
+
+var even = function(element) {
+// checks whether an element is even
+return element % 2 === 0;
+};
+
+console.log(numbers.some(even));
 // expected output: true -->
