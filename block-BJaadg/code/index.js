@@ -26,7 +26,7 @@ console.log(`The index of first is in quote is ${indexOfIs}`);
   The character at index 5 is ' '
 */
 for (let i = 0; i < 6; i++) {
-    console.log(`The character at index ${i} is ${quote.charAt(i)}`);
+  console.log(`The character at index ${i} is ${quote.charAt(i)}`);
 }
 
 /*
@@ -38,45 +38,56 @@ console.log(`${from} said ${quote} to ${to}`);
 6. Does from, to and quote ends with "rk". Check all three.
 */
 console.log(from.endsWith('rk'));
+console.log(to.endsWith('rk'));
+console.log(quote.endsWith('rk'));
+// false
+// VM11510:2 true
+// VM11510:3 false
 /*
 7. Does quote includes the word "Only"
 */
 console.log(quote.includes('Only'));
+// false
 /*
 8. Does quote includes the word " we"
 */
 console.log(quote.includes('we'));
+// true
 /*
 9. Find the index of the the word `we` in quote
 */
-alert(quote.indexOf('we'));
+alert(quote.indexOf('we'));//24
 /*
 10. Split the quote into individual word and store it in a variable name quoteSplitted
 */
 var quoteSplitted = quote.split(' ');
+// quoteSplitted
+// (11) ['There', 'is', 'only', 'one', 'thing', 'we', 'say', 'to', 'death:', 'Not', 'today']
 /*
 11. Change the word "today" in quoteSplitted to "tomorrow" and join all the words to form a sentance.
 */
 quoteSplitted[2] = 'tomorrow';
+// (11) ['There', 'is', 'tomorrow', 'one', 'thing', 'we', 'say', 'to', 'death:', 'Not', 'today']
 /*
 12. Find the index of second "o" in quote. Use indexOf
 */
-alert(quote.indexOf('o', quote.indexOf('o') + 1));
+alert(quote.indexOf('o', quote.indexOf('o') + 1));//14
 /*
 13. Find the last index of letter "a" in quote.
 */
-alert(quote.lastIndexOf('a'));
+alert(quote.lastIndexOf('a'));//48
 /*
 14. Find the second last index of letter "a" in quote.
 */
 alert(quote.lastIndexOf('a', quote.lastIndexOf('a') - 1));
+// 36
 /*
 15. Make the quote 70 character long. If it has less characters add rest as .......
 Example: "Hello" (convert to 10 characters) => "Hello....."
 Store the output in a new variable
 */
 console.log(quote.padEnd(70, "."));
-
+// There is only one thing we say to death: Not today....................
 
 /*
 16. Do same as (15) but the ... should come in start. Store the output in a new variable
@@ -84,23 +95,31 @@ console.log(quote.padEnd(70, "."));
 let max = 70;
 let length = quote.length;
 let newStartWuote = ".".repeat(max - length) + quote;
+// newStartWuote
+// '....................There is only one thing we say to death: Not today'
 /*
 17. Log the repeat of "Hello World!" 10 times.
 */
-console.log(repeat('Hello World!', 10));
+let text = "Hello World";
+console.log(text.repeat(10));
+// Hello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello World
 /*
 18. Replace today to tomorrow in quote.
 */
 quote = quote.replace('today', 'tomorrow');
+// 'There is only one thing we say to death: Not tomorrow'
 /*
-19. Replace Stark to Lannister in quoteTo
+19. Replace Stark to Lannister in To
 */
-quoteTo = quoteTo.replace('Stark', 'Lannister');
+to.replace('Stark', 'Lannister');
+// 'Arya Lannister'
 /*
 20. Make the quote of length 30 and put ... at the end. (use slice)
 */
 sliceQuote = quote.slice(0, 30);
+// 'There is only one thing we say'
 /*
 21. Find out does quote, from, to starts with "A"
 */
 console.log(quote.startsWith('A'));
+// false
